@@ -20,4 +20,10 @@ public class Singleton1 {
     public static Singleton1 getInstance() {
         return instance;
     }
+
+    public static void main(String[] args) {
+        Singleton1 instance1 = Singleton1.getInstance();
+        Singleton1 instance2 = Singleton1.getInstance();
+        System.out.println("isSingleton:" + (instance1 == instance2));//true
+    }
 }
