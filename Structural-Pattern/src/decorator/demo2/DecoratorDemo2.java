@@ -24,13 +24,6 @@ public class DecoratorDemo2 {
     }
 }
 
-/**
- * People接口
- * 有wear行为
- */
-interface People {
-    void wear();
-}
 
 /**
  * 具体的对象，该对象将被附加一些额外的操作

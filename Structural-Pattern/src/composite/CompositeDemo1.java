@@ -56,7 +56,7 @@ class Employee {
         this.dept = dept;
         this.salary = salary;
         this.subordinates = subordinates;
-        subordinates = new ArrayList<Employee>();
+        subordinates = new ArrayList<>();
     }
 
 
@@ -65,7 +65,7 @@ class Employee {
         this.name = name;
         this.dept = dept;
         this.salary = salary;
-        subordinates = new ArrayList<Employee>();
+        subordinates = new ArrayList<>();
     }
 
 
