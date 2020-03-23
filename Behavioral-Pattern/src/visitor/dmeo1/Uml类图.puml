@@ -1,0 +1,50 @@
+@startuml
+interface Person {
+    - void accept(Action action);
+}
+
+class Man{
+    - void accept(Action action)
+}
+
+class Woman{
+    - void accept(Action action)
+}
+
+abstract class Action{
+   - void act(Man man);
+   - void act(Woman woman);
+}
+
+
+class Success{
+   - void act(Man man);
+   - void act(Woman woman);
+}
+
+class Failure{
+   - void act(Man man);
+   - void act(Woman woman);
+}
+
+class ObjectStructure{
+   + List<Person> personList;
+   - void add(Person person);
+   - void show();
+}
+
+class Client{
+}
+
+Person <|-- Man
+Person <|-- Woman
+
+Action <|-- Failure
+Action <|-- Success
+
+ObjectStructure o-- Person
+Person ..> Action
+
+Client ..> ObjectStructure
+
+@enduml
