@@ -6,7 +6,7 @@ package visitor.dmeo1;
  * @Date 2020/3/23 15:21
  * @Author Danrbo
  */
-public class Happy extends Action {
+public class Happy extends Situation {
     @Override
     void act(Man man) {
         System.out.println("男的开心状态");

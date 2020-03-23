@@ -6,6 +6,10 @@ package visitor.dmeo1;
  * @Date 2020/3/23 15:02
  * @Author Danrbo
  */
+
+/**
+ * 人接口
+ */
 public interface Person {
-    void accept(Action action);
+    void accept(Situation situation);
 }

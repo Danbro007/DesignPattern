@@ -1,0 +1,74 @@
+@startuml
+
+interface College {
+    + String getName();
+    + void addDepartment(String name);
+    + Iterator createIterator();
+}
+
+class ComputerCollege {
+    - Department[] departments;
+    - int index;
+    + String getName();
+    + void addDepartment(String name);
+    + Iterator createIterator();
+}
+
+
+class InfoCollege {
+    - List<Department> departmentList;
+    - int index;
+    + String getName();
+    + void addDepartment(String name);
+    + Iterator createIterator();
+}
+
+class ComputerCollegeIterator {
+    - Department[] departments;
+    - int index;
+
+    + boolean hasNext();
+    + Object next()
+    + void remove();
+}
+
+class InfoCollegeIterator {
+    - List<Department> departmentList;
+    - int index;
+
+    + boolean hasNext();
+    + Object next()
+    + void remove();
+}
+
+interface Iterator{
+    + boolean hasNext();
+    + Object next()
+    + void remove();
+}
+
+class OutPutImpl{
+    - List<College> Colleges;
+    + void show();
+}
+class Department {
+    - String name;
+}
+
+class Client{}
+
+InfoCollegeIterator --|> Iterator
+ComputerCollegeIterator --|> Iterator
+
+InfoCollege --|> College
+ComputerCollege --|> College
+
+Department --o ComputerCollege
+Department --o InfoCollege
+Department --o ComputerCollegeIterator
+Department --o InfoCollegeIterator
+Iterator..> College
+College --o OutPutImpl
+
+Client ..> OutPutImpl
+@enduml

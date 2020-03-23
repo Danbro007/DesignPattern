@@ -1,0 +1,34 @@
+@startuml
+
+class Client{}
+abstract class Visitor{
+    + void operation1()
+    + void operation2()
+}
+
+
+class ConcreteVisitor{
+    + void operation1()
+    + void operation2()
+}
+interface Element{
+    + void accept(Visitor v);
+}
+class ConcreteElement{
+    + void accept(Visitor v);
+}
+
+class ObjectStructure{
+    - Element[] elements;
+}
+
+
+Visitor --|> ConcreteVisitor
+ConcreteElement --|> Element
+
+Client ..> ObjectStructure
+
+Visitor ..> Element
+ObjectStructure --o Element
+
+@enduml

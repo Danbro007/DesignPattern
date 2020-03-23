@@ -8,7 +8,7 @@ package visitor.dmeo1;
  */
 public class Woman implements Person {
     @Override
-    public void accept(Action action) {
-        action.act(this);
+    public void accept(Situation situation) {
+        situation.act(this);
     }
 }

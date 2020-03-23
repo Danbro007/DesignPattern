@@ -6,7 +6,11 @@ package visitor.dmeo1;
  * @Date 2020/3/23 15:12
  * @Author Danrbo
  */
-public class Failure extends Action {
+
+/**
+ * 失败状况类
+ */
+public class Failure extends Situation {
 
     @Override
     void act(Man man) {

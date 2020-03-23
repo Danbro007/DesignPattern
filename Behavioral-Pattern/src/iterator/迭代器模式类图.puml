@@ -1,0 +1,50 @@
+@startuml
+
+class Client
+
+interface Aggregate{
+    + Iterator createIterator();
+}
+
+class ConcreteAggregate01{
+    - ArrayList<E> eles;
+    + Iterator createIterator();
+}
+
+class ConcreteAggregate02{
+    - E[] eles;
+    + Iterator createIterator();
+}
+
+interface Iterator{
+    + boolean hasNext();
+    + E next();
+    + void remove();
+}
+
+class ConcreteIterator01{
+     + boolean hasNext();
+     + E next();
+     + void remove();
+}
+
+class ConcreteIterator02{
+    + boolean hasNext();
+    + E next();
+    + void remove();
+}
+
+
+ConcreteAggregate01 --|> Aggregate
+ConcreteAggregate02 --|> Aggregate
+ConcreteAggregate01 ..> ConcreteIterator01
+ConcreteAggregate02 ..> ConcreteIterator02
+ConcreteIterator01 --|> Iterator
+ConcreteIterator02 --|> Iterator
+
+Client ..> Iterator
+Client ..> Aggregate
+
+
+
+@enduml

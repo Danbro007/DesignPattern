@@ -1,0 +1,11 @@
+@startuml
+
+class 学校
+
+class 学院
+
+class 专业
+
+专业 --|> 学院
+学院 --|> 学校
+@enduml

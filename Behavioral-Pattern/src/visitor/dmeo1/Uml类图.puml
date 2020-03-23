@@ -1,14 +1,14 @@
 @startuml
 interface Person {
-    - void accept(Action action);
+    - void accept(Action situation);
 }
 
 class Man{
-    - void accept(Action action)
+    - void accept(Action situation)
 }
 
 class Woman{
-    - void accept(Action action)
+    - void accept(Action situation)
 }
 
 abstract class Action{

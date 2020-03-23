@@ -1,0 +1,12 @@
+@startuml
+
+class Person
+
+class Man
+
+class Woman
+
+Man --|> Person
+Woman --|> Person
+
+@enduml

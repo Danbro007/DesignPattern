@@ -6,7 +6,11 @@ package visitor.dmeo1;
  * @Date 2020/3/23 15:11
  * @Author Danrbo
  */
-public class Success extends Action {
+
+/**
+ * 成功情况类
+ */
+public class Success extends Situation {
 
     @Override
     void act(Man man) {
