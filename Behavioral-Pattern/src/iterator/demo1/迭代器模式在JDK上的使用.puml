@@ -1,0 +1,35 @@
+@startuml
+interface List
+
+interface Iterator{
+    + void hasNext();
+    + Object next();
+    + remove();
+}
+
+class ArrayList{
+    - Oject[] elementData;
+    + Iterator iterator();
+}
+
+
+class Itr{
+    + void hasNext();
+    + Object next();
+    + remove();
+}
+
+class Object{
+}
+
+note "Itr 是 ArrayList的内部类，共享elementData数组" as N1
+note "ArrayList的Iterator方法实际调用的是它内部类\nItr的hasNext和next方法，Itr是Iterator的实现类" as N2
+
+N1 --> Itr
+N2 --> ArrayList
+
+Object --o ArrayList
+Itr --|> Iterator
+Itr --* ArrayList
+ArrayList --|> List
+@enduml

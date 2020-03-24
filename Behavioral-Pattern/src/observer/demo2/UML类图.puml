@@ -1,0 +1,46 @@
+@startuml
+
+interface Observer{
+    + void update(float temperature, float humidity, float pressure);
+}
+
+interface Subject{
+    + void registerSubject(Observer observer);
+    + void removeSubject(Observer observer);
+    + void notifySubjects();
+}
+
+class Sina {
+    - String siteName;
+    + void display();
+}
+
+class Baidu {
+    - String siteName;
+    + void display();
+}
+class Tencent {
+    - String siteName;
+    + void display();
+}
+
+class WeatherData{
+    - float temperature;
+    - float humidity;
+    - float pressure;
+    - List<Observer> observers;
+    + setData(float temperature, float humidity, float pressure)
+}
+
+class Client{
+}
+
+
+Sina --|> Observer
+Baidu --|> Observer
+Tencent --|> Observer
+WeatherData --|> Subject
+Observer --o WeatherData
+Client ..> Subject
+
+@enduml
