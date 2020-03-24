@@ -1,0 +1,31 @@
+@startuml
+
+interface Mediator{
+}
+interface Colleague{}
+
+class ConcreteMediator{
+    - HashMap<Colleague> Colleagues;
+}
+class ConcreteColleague01{
+    void ConcreteColleague01()
+}
+class ConcreteColleague02{
+    void ConcreteColleague02()
+}
+
+class Client{}
+
+note "1、ConcreteColleague01和ConcreteColleague02的\n构造器在初始化时会把自身放入到ConcreteMediator\n的HashMap里\n2、ConcreteColleague01和ConcreteColleague02的\n对象是相互独立，为了解耦不进行交流。" as N1
+N1 --> ConcreteColleague01
+N1 --> ConcreteColleague02
+
+
+Colleague --o ConcreteMediator
+ConcreteMediator --|> Mediator
+ConcreteColleague01 --|> Colleague
+ConcreteColleague02 --|> Colleague
+Client ..> Mediator
+
+
+@enduml
