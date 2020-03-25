@@ -1,18 +1,17 @@
 package mediater.demo1;
 
 /**
- * @Classname Alarm
+ * @Classname Light
  * @Description TODO
- * @Date 2020/3/24 16:13
+ * @Date 2020/3/24 20:13
  * @Author Danrbo
  */
 
 /**
- * 闹钟类
+ * 电灯类
  */
-public class Alarm extends ElectricAppliance {
-
-    public Alarm(String name, Mediator mediator) {
+public class Light extends ElectricAppliance {
+    public Light(String name, Mediator mediator) {
         super(name, mediator);
         this.getMediator().register(name, this);
     }
@@ -22,17 +21,18 @@ public class Alarm extends ElectricAppliance {
         this.getMediator().getMessage(changeState,name);
     }
 
-    public void sendAlarm(int changeState) {
-        sendMessage(changeState, this.getName());
+    public void sendLight(int changeState){
+        sendMessage(changeState,this.getName());
     }
 
     @Override
     public void start() {
-        System.out.println("闹钟响了！");
+        System.out.println("电灯打开！");
+        this.sendLight(0);
     }
 
     @Override
     public void stop() {
-        System.out.println("闹钟停了！");
+        System.out.println("电灯关闭！");
     }
 }

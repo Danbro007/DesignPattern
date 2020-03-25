@@ -1,0 +1,26 @@
+@startuml
+class Client
+
+class GameRole{
+    - int atk;
+    - int def;
+    + Memento saveRoleMemento();
+    + void recoverRoleFromMemento(Memento memento);
+}
+
+class Memento{
+    - int atk;
+    - int def;
+}
+
+class CareTaker{
+    - List<Memento> mementoList;
+    + void setMemento(Memento memento);
+    + Memento getMemento(int index);
+}
+
+Client ..> CareTaker
+GameRole ..> Memento
+Memento ..o CareTaker
+
+@enduml

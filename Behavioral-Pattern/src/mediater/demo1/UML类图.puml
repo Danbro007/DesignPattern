@@ -1,0 +1,37 @@
+@startuml
+
+interface Mediator {
+    + void getMessage(int changeState, String colleagueName);
+    + void register(String colleagueName, ElectricAppliance electricAppliance);
+}
+
+
+abstract class ElectricAppliance{
+    - String name;
+    - Mediator mediator;
+    + abstract void sendMessage(int changeState, String name);
+    + Mediator getMediator()
+    + abstract void start();
+    + abstract void stop();
+}
+
+class Light
+class Tv
+class Alarm
+class CoffeeMachine
+
+class ConcreteMediator{
+     - HashMap<String, ElectricAppliance> colleagueMap;
+     - private HashMap<String, String> interMap;
+}
+
+class Client
+
+ConcreteMediator --|> Mediator
+Light --|> ElectricAppliance
+Tv --|> ElectricAppliance
+Alarm --|> ElectricAppliance
+CoffeeMachine --|> ElectricAppliance
+ElectricAppliance --o ConcreteMediator
+Client ..> Mediator
+@enduml
