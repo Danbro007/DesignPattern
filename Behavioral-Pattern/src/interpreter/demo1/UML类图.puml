@@ -1,0 +1,48 @@
+@startuml
+class Client{
+
+}
+abstract class Expression{
+    + abstract int interpret(HashMap<String, Integer> var)
+}
+
+class VarExpression {
+    - String key;
+}
+
+class SymbolExpression{
+    - Expression left;
+    - Expression right;
+    + void setLeft(Expression e);
+    + void setRight(Expression e);
+    + Expression getLeft();
+    + Expression getRight();
+}
+
+
+class Calculator{
+    - char[] chars;
+    - Expression expression;
+    + int run();
+}
+
+class AddExpression
+class SubExpression
+
+note "符号解释器" as N1
+note "变量解释器" as N2
+note "加法解释器" as N3
+note "减法解释器" as N4
+
+N1 --> SymbolExpression
+N2 --> VarExpression
+N3 --> AddExpression
+N4 --> SubExpression
+
+VarExpression --|> Expression
+SymbolExpression --|> Expression
+AddExpression --|> SymbolExpression
+SubExpression --|> SymbolExpression
+Calculator ..> Expression
+Client ..> Calculator
+@enduml

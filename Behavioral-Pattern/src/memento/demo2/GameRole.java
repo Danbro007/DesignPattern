@@ -14,8 +14,13 @@ import lombok.Data;
  */
 @Data
 public class GameRole {
-
+    /**
+     * 攻击力
+     */
     private int atk;
+    /**
+     * 防御力
+     */
     private int def;
 
     public GameRole(int atk, int def) {

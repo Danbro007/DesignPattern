@@ -37,6 +37,4 @@ public class CoffeeMachine extends ElectricAppliance {
         System.out.println("咖啡机停止！");
         this.sendCoffeeMachine(1);
     }
-
-
 }

@@ -10,10 +10,16 @@ import java.util.HashMap;
  */
 
 /**
- * 中介实现类
+ * 具体中介类
  */
 public class ConcreteMediator implements Mediator {
+    /**
+     * 存放家电名和对应的家电实例对象
+     */
     private HashMap<String, ElectricAppliance> colleagueMap;
+    /**
+     * 存储自定义的家电名和家电的名
+     */
     private HashMap<String, String> interMap;
 
     public ConcreteMediator() {
@@ -76,5 +82,4 @@ public class ConcreteMediator implements Mediator {
             interMap.put("Light", colleagueName);
         }
     }
-
 }

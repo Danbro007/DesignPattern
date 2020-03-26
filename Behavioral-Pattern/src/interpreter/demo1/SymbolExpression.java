@@ -25,7 +25,7 @@ public class SymbolExpression extends Expression {
     }
 
     /**
-     * 空方法
+     * 空方法，让继承它的子类来实现。
      * @param var 存储变量名和对应的值
      * @return 变量名对应的值
      */

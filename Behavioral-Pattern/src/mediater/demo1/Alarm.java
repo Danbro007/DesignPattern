@@ -11,7 +11,11 @@ package mediater.demo1;
  * 闹钟类
  */
 public class Alarm extends ElectricAppliance {
-
+    /**
+     * 实例化的同时把实例注册到中介者那里
+     * @param name 实例名
+     * @param mediator 中介者
+     */
     public Alarm(String name, Mediator mediator) {
         super(name, mediator);
         this.getMediator().register(name, this);
@@ -22,6 +26,10 @@ public class Alarm extends ElectricAppliance {
         this.getMediator().getMessage(changeState,name);
     }
 
+    /**
+     * 闹钟发送信号
+     * @param changeState 信号值
+     */
     public void sendAlarm(int changeState) {
         sendMessage(changeState, this.getName());
     }

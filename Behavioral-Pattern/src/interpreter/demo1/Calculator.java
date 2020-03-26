@@ -14,7 +14,11 @@ import java.util.Stack;
  * 计算器类
  */
 public class Calculator {
+    /**
+     * 表达式转换成的字节数组
+     */
     private char[] chars;
+
     private Expression expression;
 
     public Calculator(String str) {

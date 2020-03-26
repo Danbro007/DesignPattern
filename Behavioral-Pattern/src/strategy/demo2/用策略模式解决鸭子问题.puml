@@ -1,0 +1,46 @@
+@startuml
+
+interface FlyAction{
+    + fly():void
+}
+
+interface SwimAction{
+    + swim():void
+}
+
+class GoodFly
+class BadFly
+class NoFly
+
+class GoodSwim
+class BadSwim
+class NoSwim
+
+
+abstract class Duck{
+     - flyAction:FlyAction
+     - swimAction:SwimAction
+     + abstract display():void;
+     + fly():void;
+     + swim():void;
+}
+
+class WildDuck
+class ToyDuck
+class BeijingDuck
+
+WildDuck --|> Duck
+BeijingDuck --|> Duck
+ToyDuck --|> Duck
+
+GoodFly --|> FlyAction
+NoFly --|> FlyAction
+BadFly --|> FlyAction
+GoodSwim --|> SwimAction
+BadSwim --|> SwimAction
+NoSwim --|> SwimAction
+
+SwimAction --o Duck
+FlyAction --o Duck
+
+@enduml

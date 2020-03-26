@@ -13,12 +13,11 @@ import java.util.ArrayList;
 import java.util.List;
 
 /**
- * 保存Memento类
+ * 守护者类
  */
 @Data
 public class CareTaker {
     private List<Memento> mementoList;
-
 
     public CareTaker() {
         this.mementoList = new ArrayList<>();

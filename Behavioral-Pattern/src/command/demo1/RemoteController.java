@@ -87,6 +87,4 @@ public class RemoteController {
     public void pushUndoButton() {
         undoCommand.undo();
     }
-
-
 }

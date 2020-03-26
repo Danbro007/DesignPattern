@@ -14,7 +14,13 @@ import lombok.Data;
  */
 @Data
 public abstract class ElectricAppliance {
+    /**
+     * 电器名
+     */
     private String name;
+    /**
+     * 中介者
+     */
     private Mediator mediator;
 
     public ElectricAppliance(String name, Mediator mediator) {
@@ -29,6 +35,10 @@ public abstract class ElectricAppliance {
      */
     public abstract void sendMessage(int changeState, String name);
 
+    /**
+     * 获取中介实例对象
+     * @return 中介实例对象
+     */
     public Mediator getMediator() {
         return this.mediator;
     }

@@ -1,0 +1,38 @@
+@startuml
+
+class Client
+
+abstract class State{
+    + abstract reduceMoney():void
+    + abstract raffle():boolean
+    + abstract despensePrize():void
+}
+
+class RaffleActivity{
+    - state:State;
+    - count:int
+
+    - reduceMoney():void;
+    - raffle():void
+    + run():void
+}
+
+class NoRaffleState
+class CanRaffleState
+class DispenseState
+class DispenseOutState
+
+
+note "Client调用RaffleActivity的run方法启动抽奖" as N1
+
+NoRaffleState --|> State
+CanRaffleState --|> State
+DispenseState --|> State
+DispenseOutState --|> State
+Client ..> RaffleActivity
+State --o RaffleActivity
+
+N1 --> Client
+
+
+@enduml

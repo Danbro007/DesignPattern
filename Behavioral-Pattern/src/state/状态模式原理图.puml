@@ -1,0 +1,24 @@
+@startuml
+
+abstract State{
+    + operation1():void
+    + operation2():void
+    + operation3():void
+}
+
+class ConcreteStateA
+class ConcreteStateB
+
+class Context{
+    - state:State
+    + getState():State
+}
+
+class Client
+
+State --o Context
+Client ..> Context
+ConcreteStateA --|> State
+ConcreteStateB --|> State
+
+@enduml
